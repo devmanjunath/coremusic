@@ -38,7 +38,11 @@ namespace CoreMusic
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
-            
+
+            Configuration = new ConfigurationBuilder()
+                            .AddEnvironmentVariables()
+                            .Build();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
